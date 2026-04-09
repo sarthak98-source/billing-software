@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Font ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* ── CSS Custom Properties — Deep Navy + Warm Orange theme ── */
+:root {
+  --radius: 0.5rem;
+  --font-display: "Playfair Display", serif;
+
+  --background: 214 32% 97%;
+  --foreground: 224 47% 18%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 47% 18%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 47% 18%;
+  --primary: 224 47% 20%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 214 20% 95%;
+  --secondary-foreground: 224 47% 20%;
+  --muted: 214 20% 95%;
+  --muted-foreground: 224 15% 50%;
+  --accent: 32 90% 52%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 20% 91%;
+  --input: 214 20% 91%;
+  --ring: 224 47% 20%;
+  --success: 142 60% 40%;
+  --success-foreground: 0 0% 98%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 30 20% 20%;
+  --invoice-accent: 16 80% 50%;
+  --invoice-accent-foreground: 0 0% 98%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+  }
+}
+
+/* ── Tailwind custom color mapping ── */
+@layer utilities {
+  .bg-background    { background-color: hsl(var(--background)); }
+  .bg-foreground    { background-color: hsl(var(--foreground)); }
+  .bg-card          { background-color: hsl(var(--card)); }
+  .bg-primary       { background-color: hsl(var(--primary)); }
+  .bg-secondary     { background-color: hsl(var(--secondary)); }
+  .bg-muted         { background-color: hsl(var(--muted)); }
+  .bg-accent        { background-color: hsl(var(--accent)); }
+  .bg-destructive   { background-color: hsl(var(--destructive)); }
+  .bg-success       { background-color: hsl(var(--success)); }
+  .bg-warning       { background-color: hsl(var(--warning)); }
+  .bg-invoice-accent { background-color: hsl(var(--invoice-accent)); }
+  .bg-border        { background-color: hsl(var(--border)); }
+  .bg-input         { background-color: hsl(var(--input)); }
+
+  .text-background      { color: hsl(var(--background)); }
+  .text-foreground      { color: hsl(var(--foreground)); }
+  .text-card-foreground { color: hsl(var(--card-foreground)); }
+  .text-primary         { color: hsl(var(--primary)); }
+  .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+  .text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+  .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+  .text-accent          { color: hsl(var(--accent)); }
+  .text-accent-foreground { color: hsl(var(--accent-foreground)); }
+  .text-destructive     { color: hsl(var(--destructive)); }
+  .text-success         { color: hsl(var(--success)); }
+  .text-warning         { color: hsl(var(--warning)); }
+
+  .border-border        { border-color: hsl(var(--border)); }
+  .border-input         { border-color: hsl(var(--input)); }
+  .border-primary       { border-color: hsl(var(--primary)); }
+  .border-destructive   { border-color: hsl(var(--destructive)); }
+  .border-success       { border-color: hsl(var(--success)); }
+
+  .ring-ring            { --tw-ring-color: hsl(var(--ring)); }
+
+  /* opacity variants */
+  .bg-primary\/5    { background-color: hsl(var(--primary) / 0.05); }
+  .bg-primary\/10   { background-color: hsl(var(--primary) / 0.1); }
+  .bg-primary\/20   { background-color: hsl(var(--primary) / 0.2); }
+  .bg-primary\/90   { background-color: hsl(var(--primary) / 0.9); }
+  .bg-accent\/10    { background-color: hsl(var(--accent) / 0.1); }
+  .bg-accent\/90    { background-color: hsl(var(--accent) / 0.9); }
+  .bg-destructive\/10 { background-color: hsl(var(--destructive) / 0.1); }
+  .bg-success\/10   { background-color: hsl(var(--success) / 0.1); }
+  .bg-warning\/10   { background-color: hsl(var(--warning) / 0.1); }
+  .bg-muted\/20     { background-color: hsl(var(--muted) / 0.2); }
+  .bg-muted\/30     { background-color: hsl(var(--muted) / 0.3); }
+  .bg-muted\/50     { background-color: hsl(var(--muted) / 0.5); }
+  .bg-muted\/80     { background-color: hsl(var(--muted) / 0.8); }
+  .bg-foreground\/30 { background-color: hsl(var(--foreground) / 0.3); }
+  .bg-primary-foreground\/10 { background-color: hsl(var(--primary-foreground) / 0.1); }
+  .bg-primary-foreground\/20 { background-color: hsl(var(--primary-foreground) / 0.2); }
+  .border-primary\/20 { border-color: hsl(var(--primary) / 0.2); }
+  .border-warning\/30 { border-color: hsl(var(--warning) / 0.3); }
+  .border-destructive\/30 { border-color: hsl(var(--destructive) / 0.3); }
+  .border-border\/50  { border-color: hsl(var(--border) / 0.5); }
+  .text-destructive\/10 { color: hsl(var(--destructive) / 0.1); }
+  .hover\:bg-primary\/90:hover { background-color: hsl(var(--primary) / 0.9); }
+  .hover\:bg-primary-foreground\/10:hover { background-color: hsl(var(--primary-foreground) / 0.1); }
+  .hover\:bg-muted\/50:hover  { background-color: hsl(var(--muted) / 0.5); }
+  .hover\:bg-muted\/80:hover  { background-color: hsl(var(--muted) / 0.8); }
+  .hover\:bg-accent:hover     { background-color: hsl(var(--accent)); }
+  .hover\:bg-destructive\/10:hover { background-color: hsl(var(--destructive) / 0.1); }
+  .hover\:bg-success\/10:hover  { background-color: hsl(var(--success) / 0.1); }
+  .hover\:bg-primary\/10:hover  { background-color: hsl(var(--primary) / 0.1); }
+  .hover\:text-foreground:hover { color: hsl(var(--foreground)); }
+  .hover\:text-primary\/80:hover { color: hsl(var(--primary) / 0.8); }
+  .focus-visible\:ring-ring:focus-visible { --tw-ring-color: hsl(var(--ring)); }
+  .focus-visible\:ring-offset-background:focus-visible { --tw-ring-offset-color: hsl(var(--background)); }
+}
+
+/* ── Custom scrollbar ── */
+.inventory-scroll::-webkit-scrollbar { width: 6px; }
+.inventory-scroll::-webkit-scrollbar-track { background: hsl(var(--muted)); border-radius: 3px; }
+.inventory-scroll::-webkit-scrollbar-thumb { background: hsl(var(--primary)); border-radius: 3px; opacity: 0.5; }
+
+/* ── Auth card animation ── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.auth-card { animation: slideUp 0.4s ease-out; }
+
+/* ── Profile popup slide ── */
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.profile-slide { animation: slideRight 0.3s ease-out; }
+
+/* ── Stat card hover ── */
+.stat-card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.stat-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.25);
+}
+
+/* ── Toast animation ── */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.toast-animate { animation: toastIn 0.3s ease-out; }
+
+/* ── Font display variable ── */
+.font-display { font-family: var(--font-display); }
